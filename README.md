@@ -2,7 +2,7 @@
 
 A demo simulation showcasing how a Machine Learning model might work with **voice input** to predict diabetes likelihood based on **glucose levels** and **weather conditions**.
 
-🚀 Try it live: [The ULTIMATE link](https://lovable.dev/projects/097b69e0-3ea5-48fd-b3fd-63ad35e01e97)
+🚀 Try it live: [The ULTIMATE link](https://lovable.dev/projects/1e70623a-83b0-4aaa-b5bb-58c60262101e)
 
 ---
 
