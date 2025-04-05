@@ -1,73 +1,24 @@
-# Welcome to your Lovable project
 
-## Project info
+ 🩺 Voice-Based Diabetes Analysis (Demo Project)
+A demo simulation showcasing how a Machine Learning model might work with voice input to predict diabetes likelihood based on glucose levels and weather conditions.
 
-**URL**: https://lovable.dev/projects/1e70623a-83b0-4aaa-b5bb-58c60262101e
+🚀 Try it live: [THE ULTIMATE LINK]( https://lovable.dev/projects/1e70623a-83b0-4aaa-b5bb-58c60262101e)
 
-## How can I edit this code?
+📌 Project Overview
+This is a demo web application that simulates a voice-driven interface for healthcare. The goal is to demonstrate how we might integrate voice input with a Machine Learning model to assess diabetes risk. The model considers glucose level and weather-related data to determine whether a user might be diabetic.
 
-There are several ways of editing your application.
+⚠️ Note: This is a simulation and not intended for real medical use.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/1e70623a-83b0-4aaa-b5bb-58c60262101e) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
+🛠️ Features
+🎙️ Voice input simulation
+📊 ML model simulation (rule-based for demo purposes)
+🌤️ Weather data integration
+🧪 Instant prediction for diabetes risk
+💻 Responsive React-based UI
+⚙️ Tech Stack
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1e70623a-83b0-4aaa-b5bb-58c60262101e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+React with TypeScript
+Vite for blazing-fast development
+Tailwind CSS for styling
+shadcn/ui for clean UI components
