@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 250 33% 98%;
+    --background: 240 30% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -32,7 +33,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 258 67% 74%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -90,6 +91,22 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+/* iOS/macOS inspired components */
+@layer components {
+  .ios-card {
+    @apply bg-white rounded-2xl shadow-md border border-gray-100;
+  }
+  
+  .ios-button {
+    @apply rounded-full bg-sweetvoice-ios-blue text-white font-medium px-6 py-3 transition-all;
+  }
+  
+  .ios-input {
+    @apply bg-gray-100 rounded-lg border-0 px-4 py-3 focus:ring-2 focus:ring-sweetvoice-ios-blue;
   }
 }
 
@@ -101,7 +118,7 @@
 }
 
 .wave-bar {
-  background-color: theme('colors.sweetvoice.purple');
+  background-color: theme('colors.sweetvoice.ios.blue');
   width: 4px;
   height: 100%;
   margin: 0 3px;
@@ -166,19 +183,33 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Card with pattern - simplified */
-.diabetes-pattern-card {
-  background-color: white;
-  border: 1px solid #E5DEFF;
+/* macOS glass effect */
+.macos-glass {
+  @apply backdrop-blur-lg bg-white/80 border border-white/20 rounded-2xl shadow-sm;
 }
 
-/* Simplified dropdown */
-.feature-dropdown {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease;
+/* iOS button states */
+.ios-button:hover {
+  @apply transform scale-105 shadow-md;
 }
 
-.feature-dropdown.open {
-  height: auto;
+.ios-button:active {
+  @apply transform scale-95;
+}
+
+/* iOS control styling */
+.ios-toggle {
+  @apply w-12 h-7 rounded-full bg-gray-300 relative transition-colors duration-200 ease-in-out cursor-pointer;
+}
+
+.ios-toggle.active {
+  @apply bg-sweetvoice-ios-blue;
+}
+
+.ios-toggle-handle {
+  @apply absolute w-5 h-5 rounded-full bg-white shadow-sm transform translate-x-1 translate-y-1 transition-transform duration-200 ease-in-out;
+}
+
+.ios-toggle.active .ios-toggle-handle {
+  @apply translate-x-6;
 }

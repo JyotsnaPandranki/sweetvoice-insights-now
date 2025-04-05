@@ -76,10 +76,18 @@ export default {
 					red: '#F44336',
 					gray: '#F1F0FB',
 					dark: '#1A1F2C',
-					blue: '#2196F3',
+					blue: '#33C3F0',
 					blueDark: '#0D47A1',
 					orange: '#FF9800',
 					teal: '#009688',
+					// iOS-inspired colors
+					ios: {
+						gray: '#8E9196',
+						lightGray: '#F1F0FB',
+						blue: '#33C3F0',
+						purple: '#9b87f5',
+						white: '#FFFFFF',
+					},
 					glucose: {
 						normal: '#4CAF50',
 						warning: '#FFC107',
@@ -125,6 +133,10 @@ export default {
 				breathe: {
 					'0%, 100%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(1.03)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				}
 			},
 			animation: {
@@ -132,7 +144,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				pulse: 'pulse 1.5s ease-in-out infinite',
 				wave: 'wave 1.5s ease-in-out infinite',
-				breathe: 'breathe 3s ease-in-out infinite'
+				breathe: 'breathe 3s ease-in-out infinite',
+				'fade-in': 'fade-in 0.5s ease-out'
 			}
 		}
 	},
