@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import TabNavigation from '@/components/TabNavigation';
@@ -8,7 +7,7 @@ import ResultsDisplay, { ResultsData } from '@/components/voice-analysis/Results
 import { Card, CardContent } from '@/components/ui/card';
 import { analyzeVoice } from '@/services/mockAnalysisService';
 import { toast } from 'sonner';
-import { Mic, BarChart2, Stethoscope, InfoCircle, Volume2 } from 'lucide-react';
+import { Mic, BarChart2, Stethoscope, Info, Volume2 } from 'lucide-react';
 
 const Index = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -19,11 +18,9 @@ const Index = () => {
       setIsAnalyzing(true);
       toast.info('Analyzing your voice...');
       
-      // Call the analysis service
       const analysisResults = await analyzeVoice(audioBlob);
       setResults(analysisResults);
       
-      // Show appropriate toast based on results
       if (analysisResults.prediction === 'normal') {
         toast.success('Analysis complete: No significant indicators found');
       } else {
@@ -115,7 +112,7 @@ const Index = () => {
           <Card className="macos-glass border-0 overflow-hidden shadow-sm animate-fade-in bg-blue-50/50" style={{ animationDelay: "0.3s" }}>
             <CardContent className="p-6 md:p-8">
               <div className="flex items-start">
-                <InfoCircle className="text-sweetvoice-ios-blue mr-4 mt-1 shrink-0" />
+                <Info className="text-sweetvoice-ios-blue mr-4 mt-1 shrink-0" />
                 <div>
                   <h3 className="text-lg font-medium text-gray-800 mb-2">How to get the best results</h3>
                   <ul className="text-sm text-gray-600 space-y-2">
