@@ -67,25 +67,25 @@ This project is built using:
 
 ## ⚠️ Limitations (If Fully Implemented)
 
-- 🧠 **Model Bias & Generalization**  
+ 
   The accuracy of the ML model depends on the diversity and quality of the training dataset. It may struggle with underrepresented demographics or voice patterns.
 
-- 🎙️ **Voice Quality & Noise Sensitivity**  
+
   Background noise, low-quality microphones, or voice distortion can significantly impact accuracy.
 
-- 🌍 **Language & Accent Variability**  
+
   Performance may degrade for users with uncommon accents or speaking in unsupported languages.
 
-- 🩺 **Requires Clinical Validation**  
+
   Any health-related prediction must undergo clinical trials and obtain certifications before deployment.
 
-- 📶 **Internet Dependency**  
+  
   Voice processing and inference hosted on cloud servers require stable internet, which may be a limitation in rural areas.
 
-- 🛠️ **Black Box Problem**  
+
   Deep learning models may lack explainability, making it hard to interpret predictions and build user trust in high-stakes decisions.
 
-- 🔋 **Device Constraints**  
+
   Running voice-enabled ML models locally may not be feasible on all devices, especially low-end smartphones.
 
 
