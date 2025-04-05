@@ -69,8 +69,7 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
                 <div className="w-full max-w-md mb-2">
                   <Progress 
                     value={results.risk_score} 
-                    className="h-2" 
-                    indicatorClassName={getProgressColor(results.risk_score)}
+                    className={`h-2 ${getProgressColor(results.risk_score)}`}
                   />
                 </div>
                 <div className="flex justify-between text-xs text-muted-foreground">
