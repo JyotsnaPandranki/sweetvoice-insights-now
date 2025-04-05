@@ -8,7 +8,7 @@ import ResultsDisplay, { ResultsData } from '@/components/voice-analysis/Results
 import { Card, CardContent } from '@/components/ui/card';
 import { analyzeVoice } from '@/services/mockAnalysisService';
 import { toast } from 'sonner';
-import { ActivitySquare, MicVocal, Stethoscope } from 'lucide-react';
+import { Volume2, BarChart2, Stethoscope } from 'lucide-react';
 
 const Index = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -17,7 +17,7 @@ const Index = () => {
   const handleAudioCaptured = async (audioBlob: Blob) => {
     try {
       setIsAnalyzing(true);
-      toast.info('Analyzing voice patterns...');
+      toast.info('Analyzing your voice...');
       
       // Call the analysis service
       const analysisResults = await analyzeVoice(audioBlob);
@@ -25,9 +25,9 @@ const Index = () => {
       
       // Show appropriate toast based on results
       if (analysisResults.prediction === 'normal') {
-        toast.success('Analysis complete: No significant indicators detected');
+        toast.success('Analysis complete: No significant indicators found');
       } else {
-        toast.warning('Analysis complete: Potential indicators detected');
+        toast.warning('Analysis complete: Potential indicators found');
       }
     } catch (error) {
       console.error('Error analyzing audio:', error);
@@ -42,60 +42,59 @@ const Index = () => {
       <Header />
       <TabNavigation />
       
-      <main className="flex-1 container mx-auto py-8 px-4 bg-gradient-to-b from-white to-sweetvoice-light/30">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="text-center mb-8">
+      <main className="flex-1 container mx-auto py-6 px-4 sm:px-6 md:py-8 bg-white">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-4">
               <div className="bg-sweetvoice-light p-3 rounded-full">
-                <MicVocal className="h-8 w-8 text-sweetvoice-purple" />
+                <Volume2 className="h-8 w-8 text-sweetvoice-purple" />
               </div>
             </div>
-            <h1 className="text-3xl font-bold text-sweetvoice-darkPurple mb-2 relative inline-block">
-              Voice Analysis
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-sweetvoice-purple to-sweetvoice-blue rounded-full"></span>
+            <h1 className="text-2xl sm:text-3xl font-bold text-sweetvoice-darkPurple mb-2">
+              Voice Analysis for Diabetes
             </h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-4 bg-white/80 p-4 rounded-lg border border-sweetvoice-light shadow-sm">
-              SweetVoice analyzes vocal biomarkers to detect potential indicators of diabetes.
-              Record your voice for at least 10 seconds or upload an audio file to begin.
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto mt-4 bg-white p-4 rounded-lg border border-sweetvoice-light shadow-sm">
+              SweetVoice analyzes your voice to detect potential signs of diabetes.
+              Simply record your voice for at least 10 seconds to begin.
             </p>
             
-            <div className="flex justify-center gap-6 mt-6">
+            <div className="flex justify-center gap-4 sm:gap-6 mt-6">
               <div className="flex flex-col items-center">
-                <div className="w-10 h-10 rounded-full bg-sweetvoice-glucose-lowBg flex items-center justify-center mb-2">
-                  <MicVocal size={20} className="text-sweetvoice-glucose-normal" />
+                <div className="w-12 h-12 rounded-full bg-sweetvoice-glucose-lowBg flex items-center justify-center mb-2">
+                  <Volume2 size={24} className="text-sweetvoice-glucose-normal" />
                 </div>
-                <span className="text-xs text-muted-foreground">Record</span>
+                <span className="text-sm">Record Voice</span>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-10 h-10 rounded-full bg-sweetvoice-glucose-mediumBg flex items-center justify-center mb-2">
-                  <ActivitySquare size={20} className="text-sweetvoice-orange" />
+                <div className="w-12 h-12 rounded-full bg-sweetvoice-glucose-mediumBg flex items-center justify-center mb-2">
+                  <BarChart2 size={24} className="text-sweetvoice-orange" />
                 </div>
-                <span className="text-xs text-muted-foreground">Analyze</span>
+                <span className="text-sm">Analyze</span>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-10 h-10 rounded-full bg-sweetvoice-glucose-highBg flex items-center justify-center mb-2">
-                  <Stethoscope size={20} className="text-sweetvoice-glucose-high" />
+                <div className="w-12 h-12 rounded-full bg-sweetvoice-glucose-highBg flex items-center justify-center mb-2">
+                  <Stethoscope size={24} className="text-sweetvoice-glucose-high" />
                 </div>
-                <span className="text-xs text-muted-foreground">Results</span>
+                <span className="text-sm">Get Results</span>
               </div>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 gap-8">
+          <div className="grid grid-cols-1 gap-6">
             <VoiceRecorder onAudioCaptured={handleAudioCaptured} />
             
             {isAnalyzing ? (
-              <Card className="border-2 border-sweetvoice-blue/30 bg-gradient-to-r from-white to-sweetvoice-light/30 shadow-md">
-                <CardContent className="pt-6 flex flex-col items-center justify-center min-h-[250px]">
+              <Card className="border-2 border-sweetvoice-blue/30 shadow-md">
+                <CardContent className="pt-6 flex flex-col items-center justify-center min-h-[200px]">
                   <div className="wave-animation">
                     <div className="wave-bar bg-sweetvoice-blue"></div>
                     <div className="wave-bar bg-sweetvoice-purple"></div>
-                    <div className="wave-bar bg-sweetvoice-teal"></div>
+                    <div className="wave-bar bg-sweetvoice-purple"></div>
                     <div className="wave-bar bg-sweetvoice-purple"></div>
                     <div className="wave-bar bg-sweetvoice-blue"></div>
                   </div>
-                  <p className="text-sweetvoice-darkPurple font-medium mt-6 animate-pulse">Analyzing voice biomarkers...</p>
-                  <p className="text-xs text-muted-foreground mt-2">Detecting patterns in vocal features</p>
+                  <p className="text-sweetvoice-darkPurple font-medium mt-6">Analyzing your voice...</p>
+                  <p className="text-sm text-muted-foreground mt-2">Please wait while we process your recording</p>
                 </CardContent>
               </Card>
             ) : results ? (

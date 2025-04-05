@@ -15,6 +15,10 @@ export default {
 			center: true,
 			padding: '2rem',
 			screens: {
+				'sm': '640px',
+				'md': '768px',
+				'lg': '1024px',
+				'xl': '1280px',
 				'2xl': '1400px'
 			}
 		},
@@ -79,7 +83,7 @@ export default {
 					glucose: {
 						normal: '#4CAF50',
 						warning: '#FFC107',
-						high: '#FF5722',
+						high: '#F44336',
 						critical: '#F44336',
 						lowBg: '#E8F5E9',
 						mediumBg: '#FFF8E1',
@@ -111,7 +115,7 @@ export default {
 				},
 				pulse: {
 					'0%, 100%': { opacity: '1' },
-					'50%': { opacity: '0.5' }
+					'50%': { opacity: '0.7' }
 				},
 				wave: {
 					'0%': { transform: 'scaleY(1)' },
@@ -120,12 +124,7 @@ export default {
 				},
 				breathe: {
 					'0%, 100%': { transform: 'scale(1)' },
-					'50%': { transform: 'scale(1.05)' }
-				},
-				gradientFlow: {
-					'0%': { backgroundPosition: '0% 50%' },
-					'50%': { backgroundPosition: '100% 50%' },
-					'100%': { backgroundPosition: '0% 50%' }
+					'50%': { transform: 'scale(1.03)' }
 				}
 			},
 			animation: {
@@ -133,13 +132,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				pulse: 'pulse 1.5s ease-in-out infinite',
 				wave: 'wave 1.5s ease-in-out infinite',
-				breathe: 'breathe 3s ease-in-out infinite',
-				gradientFlow: 'gradientFlow 3s ease infinite'
-			},
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'glucose-gradient': 'linear-gradient(135deg, #4CAF50 0%, #2196F3 100%)',
-				'diabetes-pattern': 'linear-gradient(135deg, rgba(155, 135, 245, 0.15) 25%, transparent 25%, transparent 50%, rgba(155, 135, 245, 0.15) 50%, rgba(155, 135, 245, 0.15) 75%, transparent 75%, transparent)',
+				breathe: 'breathe 3s ease-in-out infinite'
 			}
 		}
 	},

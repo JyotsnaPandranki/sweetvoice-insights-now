@@ -1,6 +1,6 @@
 
 import React, { useState, useRef } from 'react';
-import { Mic, StopCircle, Upload, MicOff, Info } from 'lucide-react';
+import { Mic, StopCircle, Upload, Info, Volume2 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { toast } from 'sonner';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -122,24 +122,22 @@ const VoiceRecorder: React.FC<VoiceRecorderProps> = ({ onAudioCaptured }) => {
   };
 
   return (
-    <Card className="w-full border-2 border-sweetvoice-light overflow-hidden relative">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sweetvoice-glucose-normal via-sweetvoice-blue to-sweetvoice-purple"></div>
+    <Card className="w-full border-2 border-sweetvoice-light shadow-sm">
       <CardHeader className="pt-6 pb-2">
         <CardTitle className="text-xl font-semibold text-center flex items-center justify-center gap-2">
           <span className="bg-sweetvoice-light p-1.5 rounded-full">
-            <Mic className="h-4 w-4 text-sweetvoice-darkPurple" />
+            <Volume2 className="h-4 w-4 text-sweetvoice-darkPurple" />
           </span>
-          Voice Sample
+          Record Your Voice
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-2">
         <div className="space-y-6">
           <div className="flex flex-col items-center justify-center gap-4">
-            <p className="text-sm text-muted-foreground text-center max-w-md bg-sweetvoice-light/30 p-3 rounded-lg border border-sweetvoice-light/50 flex items-start gap-2">
-              <Info className="h-4 w-4 mt-0.5 shrink-0 text-sweetvoice-blue" />
+            <p className="text-base text-muted-foreground text-center max-w-md bg-sweetvoice-light/30 p-3 rounded-lg border border-sweetvoice-light/50 flex items-start gap-2">
+              <Info className="h-5 w-5 mt-0.5 shrink-0 text-sweetvoice-blue" />
               <span>
-                Record your voice or upload an audio file. For best results, please speak clearly 
-                for at least 10 seconds in a quiet environment.
+                Speak clearly for at least 10 seconds in a quiet room. This helps us analyze your voice accurately.
               </span>
             </p>
           </div>
@@ -156,10 +154,10 @@ const VoiceRecorder: React.FC<VoiceRecorderProps> = ({ onAudioCaptured }) => {
               <div className="text-xl font-mono text-sweetvoice-darkPurple">
                 {formatTime(recordingDuration)}
               </div>
-              <div className="text-xs text-muted-foreground mt-1">
+              <div className="text-sm text-muted-foreground mt-1">
                 {recordingDuration < 10 ? 
                   "Please continue speaking..." : 
-                  "Recording duration good, you may continue or stop"}
+                  "Recording time is good, you can continue or stop now"}
               </div>
             </div>
           )}
@@ -167,7 +165,7 @@ const VoiceRecorder: React.FC<VoiceRecorderProps> = ({ onAudioCaptured }) => {
           {isProcessing && (
             <div className="flex flex-col justify-center items-center">
               <div className="w-12 h-12 rounded-full border-4 border-sweetvoice-light border-t-sweetvoice-purple animate-spin"></div>
-              <div className="animate-pulse text-sweetvoice-darkPurple mt-4 font-medium">
+              <div className="text-sweetvoice-darkPurple mt-4 font-medium">
                 Processing audio...
               </div>
             </div>
@@ -177,19 +175,21 @@ const VoiceRecorder: React.FC<VoiceRecorderProps> = ({ onAudioCaptured }) => {
             {!isRecording ? (
               <Button 
                 onClick={startRecording} 
-                className="bg-gradient-to-r from-sweetvoice-glucose-normal to-sweetvoice-blue hover:from-sweetvoice-blue hover:to-sweetvoice-purple transition-all duration-300 group"
+                className="bg-sweetvoice-glucose-normal hover:bg-sweetvoice-glucose-normal/80 text-white font-medium text-base py-6"
                 disabled={isProcessing}
+                size="lg"
               >
-                <Mic className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                Record Voice
+                <Mic className="mr-2 h-5 w-5" />
+                Start Recording
               </Button>
             ) : (
               <Button 
                 onClick={stopRecording} 
                 variant="destructive"
-                className="bg-gradient-to-r from-sweetvoice-orange to-sweetvoice-red hover:from-sweetvoice-red hover:to-sweetvoice-orange transition-all duration-300"
+                className="bg-sweetvoice-red hover:bg-sweetvoice-red/80 text-white font-medium text-base py-6"
+                size="lg"
               >
-                <StopCircle className="mr-2 h-4 w-4" />
+                <StopCircle className="mr-2 h-5 w-5" />
                 Stop Recording
               </Button>
             )}
@@ -198,10 +198,11 @@ const VoiceRecorder: React.FC<VoiceRecorderProps> = ({ onAudioCaptured }) => {
               onClick={triggerFileUpload} 
               variant="outline"
               disabled={isRecording || isProcessing}
-              className="border-sweetvoice-purple/30 text-sweetvoice-darkPurple hover:bg-sweetvoice-light/50 transition-all duration-300"
+              className="border-sweetvoice-blue/50 text-sweetvoice-blue hover:bg-sweetvoice-light/50 font-medium text-base py-6"
+              size="lg"
             >
-              <Upload className="mr-2 h-4 w-4" />
-              Upload Audio
+              <Upload className="mr-2 h-5 w-5" />
+              Upload Audio File
             </Button>
             <input
               type="file"
@@ -212,10 +213,10 @@ const VoiceRecorder: React.FC<VoiceRecorderProps> = ({ onAudioCaptured }) => {
             />
           </div>
           
-          <div className="text-xs text-muted-foreground text-center flex items-center justify-center gap-1.5">
-            <span className="bg-sweetvoice-light rounded-full px-2 py-0.5">WAV</span>
-            <span className="bg-sweetvoice-light rounded-full px-2 py-0.5">MP3</span>
-            <span className="text-muted-foreground">formats supported</span>
+          <div className="text-sm text-center flex flex-wrap items-center justify-center gap-2 mt-2">
+            <span>Supported formats:</span>
+            <span className="bg-sweetvoice-light rounded-full px-3 py-1">WAV</span>
+            <span className="bg-sweetvoice-light rounded-full px-3 py-1">MP3</span>
           </div>
         </div>
       </CardContent>
