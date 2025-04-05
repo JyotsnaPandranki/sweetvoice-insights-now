@@ -137,3 +137,64 @@
     transform: scaleY(0.3);
   }
 }
+
+/* Glucose meter styling */
+.glucose-meter {
+  height: 16px;
+  background: linear-gradient(90deg, 
+    #4CAF50 0%, 
+    #8BC34A 20%, 
+    #FFEB3B 40%, 
+    #FFC107 60%, 
+    #FF9800 80%, 
+    #F44336 100%
+  );
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.glucose-marker {
+  position: absolute;
+  top: -5px;
+  width: 3px;
+  height: 26px;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.2);
+  transform: translateX(-50%);
+}
+
+/* Biomarker highlight */
+.biomarker-highlight {
+  transition: all 0.3s ease;
+}
+
+.biomarker-highlight:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Card with pattern */
+.diabetes-pattern-card {
+  background-image: linear-gradient(135deg, 
+    rgba(155, 135, 245, 0.05) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(155, 135, 245, 0.05) 50%, 
+    rgba(155, 135, 245, 0.05) 75%, 
+    transparent 75%, 
+    transparent
+  );
+  background-size: 20px 20px;
+}
+
+/* Colorful dropdown for displaying long texts */
+.feature-dropdown {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.feature-dropdown.open {
+  height: auto;
+}

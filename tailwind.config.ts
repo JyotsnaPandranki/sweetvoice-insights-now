@@ -71,7 +71,20 @@ export default {
 					yellow: '#FFC107',
 					red: '#F44336',
 					gray: '#F1F0FB',
-					dark: '#1A1F2C'
+					dark: '#1A1F2C',
+					blue: '#2196F3',
+					blueDark: '#0D47A1',
+					orange: '#FF9800',
+					teal: '#009688',
+					glucose: {
+						normal: '#4CAF50',
+						warning: '#FFC107',
+						high: '#FF5722',
+						critical: '#F44336',
+						lowBg: '#E8F5E9',
+						mediumBg: '#FFF8E1',
+						highBg: '#FBE9E7',
+					}
 				}
 			},
 			borderRadius: {
@@ -104,13 +117,29 @@ export default {
 					'0%': { transform: 'scaleY(1)' },
 					'50%': { transform: 'scaleY(0.5)' },
 					'100%': { transform: 'scaleY(1)' }
+				},
+				breathe: {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' }
+				},
+				gradientFlow: {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				pulse: 'pulse 1.5s ease-in-out infinite',
-				wave: 'wave 1.5s ease-in-out infinite'
+				wave: 'wave 1.5s ease-in-out infinite',
+				breathe: 'breathe 3s ease-in-out infinite',
+				gradientFlow: 'gradientFlow 3s ease infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'glucose-gradient': 'linear-gradient(135deg, #4CAF50 0%, #2196F3 100%)',
+				'diabetes-pattern': 'linear-gradient(135deg, rgba(155, 135, 245, 0.15) 25%, transparent 25%, transparent 50%, rgba(155, 135, 245, 0.15) 50%, rgba(155, 135, 245, 0.15) 75%, transparent 75%, transparent)',
 			}
 		}
 	},
