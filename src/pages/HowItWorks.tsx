@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import TabNavigation from '@/components/TabNavigation';
@@ -6,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   Mic, 
-  Waveform, 
+  WaveformCircle, 
   CircuitBoard, 
   BarChart4, 
   FileSpreadsheet 
@@ -44,7 +43,7 @@ const HowItWorks = () => {
                     
                     <div className="flex flex-col items-center text-center">
                       <div className="w-12 h-12 rounded-full bg-sweetvoice-light flex items-center justify-center mb-3">
-                        <Waveform className="h-6 w-6 text-sweetvoice-purple" />
+                        <WaveformCircle className="h-6 w-6 text-sweetvoice-purple" />
                       </div>
                       <h3 className="font-medium text-sm">Feature Extraction</h3>
                       <p className="text-xs text-muted-foreground mt-1">Analyze vocal biomarkers</p>
