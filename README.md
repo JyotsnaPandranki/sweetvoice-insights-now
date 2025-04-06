@@ -1,6 +1,6 @@
 #  Voice-Based Diabetes Analysis (Demo Project)
 
-A demo simulation showcasing how a Machine Learning model might work with **voice input** to predict diabetes likelihood based on **glucose levels** and **weather conditions**.
+A demo simulation showcasing how a Machine Learning model might work with **voice input** to predict diabetes likelihood based on **glucose levels**.
 
  Try it live: [The ULTIMATE link](https://lovable.dev/projects/1e70623a-83b0-4aaa-b5bb-58c60262101e)
 
