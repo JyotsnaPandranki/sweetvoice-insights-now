@@ -88,4 +88,7 @@ This project is built using:
 
   Running voice-enabled ML models locally may not be feasible on all devices, especially low-end smartphones.
 
+---
+
+  WE HAVE TAKEN THE HELP OF AI TOOLS TO BUILD THE WORKING SOFTWARE WEBSITE.
 
