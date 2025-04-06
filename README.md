@@ -1,4 +1,4 @@
-#  Voice-Based Diabetes Analysis (Demo Project) made for the-  418 HACKATHON hosted by ENIGMA under AEON 2025.
+#  Voice-Based Diabetes Analysis (Demo Project) made for the -  418 HACKATHON hosted by ENIGMA under AEON 2025.
 
 A demo simulation showcasing how a Machine Learning model might work with **voice input** to predict diabetes likelihood based on **glucose levels**.
 
