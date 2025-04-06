@@ -8,7 +8,7 @@ A demo simulation showcasing how a Machine Learning model might work with **voic
 
 ##  Project Overview
 
-This is a demo web application that simulates a voice-driven interface for healthcare. The goal is to demonstrate how we might integrate voice input with a Machine Learning model to assess diabetes risk. The model considers glucose level and weather-related data to determine whether a user might be diabetic.
+This is a demo web application that simulates a voice-driven interface for healthcare. The goal is to demonstrate how we might integrate voice input with a Machine Learning model to assess diabetes risk. The model considers glucose level to determine whether a user might be diabetic.
 
 >  Note: This is a simulation and **not** intended for real medical use.
 
@@ -48,11 +48,9 @@ This project is built using:
 
 ##  Features
 
--  Simulated voice input for glucose levels and weather conditions  
+-  Simulated voice input for glucose levels
 -  Rule-based ML model to demonstrate prediction logic  
 -  Instant analysis and result display  
--  Weather input consideration to model environmental effects  
--  Clean, responsive UI built with modern tools
 
 ---
 
